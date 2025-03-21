@@ -1,143 +1,88 @@
 <?php
-// Verificar se o formulário foi enviado
+// Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Inicializar variáveis de resposta
-    $response = array(
-        'success' => false,
-        'message' => ''
-    );
     
-    // Validar campos obrigatórios
-    if (empty($_POST['nome']) || empty($_POST['email']) || empty($_POST['telefone']) || empty($_POST['mensagem']) || empty($_POST['assunto'])) {
-        $response['message'] = 'Por favor, preencha todos os campos obrigatórios.';
-    } 
-    // Validar e-mail
-    elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $response['message'] = 'Por favor, informe um e-mail válido.';
+    // Coleta os dados do formulário
+    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
+    $company = filter_input(INPUT_POST, 'company', FILTER_SANITIZE_STRING);
+    $subject = filter_input(INPUT_POST, 'subject', FILTER_SANITIZE_STRING);
+    $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+    
+    // Validação básica
+    $errors = [];
+    
+    if (empty($name)) {
+        $errors[] = "O nome é obrigatório.";
     }
-    // Validar checkbox de termos (deve estar marcado)
-    elseif (!isset($_POST['termos'])) {
-        $response['message'] = 'Você precisa concordar com a política de privacidade.';
+    
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "E-mail inválido ou não informado.";
     }
-    // Se tudo estiver válido, processar o formulário
-    else {
-        // Sanitizar dados
-        $nome = htmlspecialchars($_POST['nome']);
-        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-        $telefone = htmlspecialchars($_POST['telefone']);
-        $empresa = isset($_POST['empresa']) ? htmlspecialchars($_POST['empresa']) : '';
-        $assunto = htmlspecialchars($_POST['assunto']);
-        $mensagem = htmlspecialchars($_POST['mensagem']);
+    
+    if (empty($phone)) {
+        $errors[] = "O telefone é obrigatório.";
+    }
+    
+    if (empty($subject)) {
+        $errors[] = "Por favor, selecione um assunto.";
+    }
+    
+    if (empty($message)) {
+        $errors[] = "Por favor, escreva sua mensagem.";
+    }
+    
+    // Se não houver erros, envia o e-mail
+    if (empty($errors)) {
         
-        // Configurar destinatário
+        // Destinatário
         $to = "contato@s2consultoria.com.br";
         
         // Assunto do e-mail
-        $subject = "Formulário de Contato: " . $assunto;
+        $email_subject = "Contato via site: " . $subject;
         
         // Corpo do e-mail
-        $message = "Nome: " . $nome . "\r\n";
-        $message .= "E-mail: " . $email . "\r\n";
-        $message .= "Telefone: " . $telefone . "\r\n";
-        if (!empty($empresa)) {
-            $message .= "Empresa: " . $empresa . "\r\n";
-        }
-        $message .= "Assunto: " . $assunto . "\r\n\r\n";
-        $message .= "Mensagem:\r\n" . $mensagem;
+        $email_body = "Você recebeu uma nova mensagem do formulário de contato do site.\n\n";
+        $email_body .= "Nome: " . $name . "\n";
+        $email_body .= "E-mail: " . $email . "\n";
+        $email_body .= "Telefone: " . $phone . "\n";
+        $email_body .= "Empresa: " . $company . "\n";
+        $email_body .= "Assunto: " . $subject . "\n";
+        $email_body .= "Mensagem:\n" . $message . "\n";
         
-        // Headers
-        $headers = "From: site@s2consultoria.com.br\r\n";
+        // Cabeçalhos do e-mail
+        $headers = "From: " . $email . "\r\n";
         $headers .= "Reply-To: " . $email . "\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion();
         
-        // Tentar enviar o e-mail
-        if (mail($to, $subject, $message, $headers)) {
-            $response['success'] = true;
-            $response['message'] = 'Sua mensagem foi enviada com sucesso! Em breve entraremos em contato.';
-            
-            // Opcionalmente: Salvar mensagem no banco de dados
-            // saveMessageToDatabase($nome, $email, $telefone, $empresa, $assunto, $mensagem);
-            
-            // Opcionalmente: Enviar cópia para o remetente
-            // sendConfirmationEmail($nome, $email);
+        // Tenta enviar o e-mail
+        if (mail($to, $email_subject, $email_body, $headers)) {
+            // E-mail enviado com sucesso
+            $response = [
+                'status' => 'success',
+                'message' => 'Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.'
+            ];
         } else {
-            $response['message'] = 'Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde ou entre em contato pelo telefone.';
+            // Falha no envio do e-mail
+            $response = [
+                'status' => 'error',
+                'message' => 'Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.'
+            ];
         }
-    }
-    
-    // Retornar resposta como JSON para requisições AJAX
-    if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-        header('Content-Type: application/json');
-        echo json_encode($response);
-        exit;
-    }
-    
-    // Redirecionar com mensagem para requisições normais
-    if ($response['success']) {
-        header('Location: ../contato.php?status=success&message=' . urlencode($response['message']));
+        
     } else {
-        header('Location: ../contato.php?status=error&message=' . urlencode($response['message']));
+        // Há erros no formulário
+        $response = [
+            'status' => 'error',
+            'message' => 'Por favor, corrija os seguintes erros:',
+            'errors' => $errors
+        ];
     }
+    
+    // Retorna a resposta como JSON
+    header('Content-Type: application/json');
+    echo json_encode($response);
     exit;
 }
-
-/**
- * Função para salvar a mensagem no banco de dados
- * Descomente e configure conforme necessário
- */
-/*
-function saveMessageToDatabase($nome, $email, $telefone, $empresa, $assunto, $mensagem) {
-    try {
-        // Configurações do banco de dados
-        $host = 'localhost';
-        $dbname = 'database_name';
-        $username = 'username';
-        $password = 'password';
-
-        // Conectar ao banco de dados
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        // Preparar e executar a consulta
-        $stmt = $pdo->prepare("INSERT INTO contatos (nome, email, telefone, empresa, assunto, mensagem, data_envio) 
-                              VALUES (:nome, :email, :telefone, :empresa, :assunto, :mensagem, NOW())");
-        
-        $stmt->execute([
-            ':nome' => $nome,
-            ':email' => $email,
-            ':telefone' => $telefone,
-            ':empresa' => $empresa,
-            ':assunto' => $assunto,
-            ':mensagem' => $mensagem
-        ]);
-        
-        return true;
-    } catch (PDOException $e) {
-        // Registrar erro em log
-        error_log('Erro ao salvar contato: ' . $e->getMessage());
-        return false;
-    }
-}
-*/
-
-/**
- * Função para enviar e-mail de confirmação ao remetente
- * Descomente e configure conforme necessário
- */
-/*
-function sendConfirmationEmail($nome, $email) {
-    $subject = "Recebemos sua mensagem - S2 Consultoria";
-    
-    $message = "Olá $nome,\r\n\r\n";
-    $message .= "Recebemos sua mensagem e agradecemos pelo contato.\r\n";
-    $message .= "Um de nossos consultores entrará em contato com você em breve.\r\n\r\n";
-    $message .= "Atenciosamente,\r\n";
-    $message .= "Equipe S2 Consultoria e Treinamento em Segurança do Trabalho\r\n";
-    
-    $headers = "From: contato@s2consultoria.com.br\r\n";
-    $headers .= "X-Mailer: PHP/" . phpversion();
-    
-    mail($email, $subject, $message, $headers);
-}
-*/
 ?>

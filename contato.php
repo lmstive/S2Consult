@@ -1,194 +1,168 @@
 <?php
-// Definição do título da página
-$pageTitle = "Contato | S2 Consultoria e Treinamento";
-// Inclusão do cabeçalho
-include_once 'includes/header.php';
-
-// Processamento do formulário
-$successMessage = "";
-$errorMessage = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verifica se todos os campos obrigatórios foram preenchidos
-    if (!empty($_POST['nome']) && !empty($_POST['email']) && !empty($_POST['telefone']) && !empty($_POST['mensagem'])) {
-        
-        // Sanitização dos dados
-        $nome = htmlspecialchars($_POST['nome']);
-        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-        $telefone = htmlspecialchars($_POST['telefone']);
-        $empresa = htmlspecialchars($_POST['empresa']);
-        $assunto = htmlspecialchars($_POST['assunto']);
-        $mensagem = htmlspecialchars($_POST['mensagem']);
-        
-        // Validação do e-mail
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            // Destinatário
-            $to = "contato@s2consultoria.com.br";
-            
-            // Assunto do e-mail
-            $subject = "Formulário de Contato: " . $assunto;
-            
-            // Mensagem
-            $message = "Nome: " . $nome . "\r\n";
-            $message .= "E-mail: " . $email . "\r\n";
-            $message .= "Telefone: " . $telefone . "\r\n";
-            $message .= "Empresa: " . $empresa . "\r\n";
-            $message .= "Assunto: " . $assunto . "\r\n\r\n";
-            $message .= "Mensagem:\r\n" . $mensagem;
-            
-            // Headers
-            $headers = "From: " . $email . "\r\n";
-            $headers .= "Reply-To: " . $email . "\r\n";
-            
-            // Envio do e-mail
-            if (mail($to, $subject, $message, $headers)) {
-                $successMessage = "Mensagem enviada com sucesso! Em breve entraremos em contato.";
-            } else {
-                $errorMessage = "Erro ao enviar a mensagem. Por favor, tente novamente mais tarde.";
-            }
-        } else {
-            $errorMessage = "Por favor, informe um e-mail válido.";
-        }
-    } else {
-        $errorMessage = "Por favor, preencha todos os campos obrigatórios.";
-    }
-}
+$pageTitle = "Contato | S2 Consultoria e Treinamento em Segurança do Trabalho";
+$currentPage = "contato";
+include 'includes/header.php';
+include 'includes/navbar.php';
 ?>
 
-<!-- Hero Section -->
-<section class="hero-section-small">
-    <div class="container text-center">
-        <h1 class="display-4 fw-bold mb-4">Entre em Contato</h1>
-        <p class="lead">Estamos prontos para atender às suas necessidades</p>
+<!-- Page Header -->
+<section class="bg-primary text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="fw-bold">Entre em Contato</h1>
+                <p class="lead">Estamos à disposição para ajudar sua empresa</p>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- Contato Conteúdo -->
-<section class="py-5" id="contact-content">
-    <div class="container py-5">
+<!-- Contact Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center mb-5">
+                <h2 class="text-primary fw-bold">Como Podemos Ajudar?</h2>
+                <p>Entre em contato conosco para solicitar um orçamento ou tirar dúvidas sobre nossos serviços.</p>
+            </div>
+        </div>
+
         <div class="row">
             <!-- Informações de Contato -->
-            <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
-                <h2 class="section-title text-start mb-4">Informações de Contato</h2>
-                <p class="mb-5">Entre em contato conosco para solicitar uma proposta, tirar dúvidas ou agendar uma visita. Nossa equipe está pronta para atendê-lo.</p>
-                
-                <div class="d-flex mb-4">
-                    <div class="me-3">
-                        <div class="contact-icon bg-primary text-white rounded-circle p-3 d-inline-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
-                            <i class="fas fa-map-marker-alt"></i>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="contact-info-box" data-aos="fade-up">
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-geo-alt-fill text-primary me-3 fs-3"></i>
+                        <div>
+                            <h4 class="h5 fw-bold text-primary">Endereço</h4>
+                            <p class="mb-0">Endereço da empresa, Cidade - Estado, CEP</p>
                         </div>
                     </div>
-                    <div>
-                        <h5 class="mb-2">Endereço</h5>
-                        <p class="mb-0">Av. República, 1500, Centro</p>
-                        <p>Cascavel, PR - CEP 85810-040</p>
+                </div>
+
+                <div class="contact-info-box" data-aos="fade-up" data-aos-delay="100">
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-telephone-fill text-primary me-3 fs-3"></i>
+                        <div>
+                            <h4 class="h5 fw-bold text-primary">Telefone</h4>
+                            <p class="mb-0">(00) 0000-0000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info-box" data-aos="fade-up" data-aos-delay="200">
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-whatsapp text-primary me-3 fs-3"></i>
+                        <div>
+                            <h4 class="h5 fw-bold text-primary">WhatsApp</h4>
+                            <p class="mb-0">(00) 00000-0000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info-box" data-aos="fade-up" data-aos-delay="300">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-envelope-fill text-primary me-3 fs-3"></i>
+                        <div>
+                            <h4 class="h5 fw-bold text-primary">E-mail</h4>
+                            <p class="mb-0">contato@s2consultoria.com.br</p>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="d-flex mb-4">
-                    <div class="me-3">
-                        <div class="contact-icon bg-primary text-white rounded-circle p-3 d-inline-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <h5 class="mb-2">Telefone</h5>
-                        <p class="mb-0"><a href="tel:4532230000" class="text-decoration-none text-dark">(45) 3223-0000</a></p>
-                        <p><a href="tel:45999999999" class="text-decoration-none text-dark">(45) 99999-9999</a></p>
-                    </div>
-                </div>
-                
-                <div class="d-flex mb-4">
-                    <div class="me-3">
-                        <div class="contact-icon bg-primary text-white rounded-circle p-3 d-inline-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <h5 class="mb-2">E-mail</h5>
-                        <p class="mb-0"><a href="mailto:contato@s2consultoria.com.br" class="text-decoration-none text-dark">contato@s2consultoria.com.br</a></p>
-                        <p><a href="mailto:comercial@s2consultoria.com.br" class="text-decoration-none text-dark">comercial@s2consultoria.com.br</a></p>
-                    </div>
-                </div>
-                
-                <div class="d-flex">
-                    <div class="me-3">
-                        <div class="contact-icon bg-primary text-white rounded-circle p-3 d-inline-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <h5 class="mb-2">Horário de Atendimento</h5>
-                        <p class="mb-0">Segunda - Sexta: 8:00 - 18:00</p>
-                        <p>Sábado: 9:00 - 12:00</p>
+                <div class="mt-5">
+                    <h4 class="h5 fw-bold text-primary mb-4">Redes Sociais</h4>
+                    <div class="d-flex">
+                        <a href="#" class="me-3 social-icon-alt" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="me-3 social-icon-alt" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon-alt" target="_blank"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
             
             <!-- Formulário de Contato -->
-            <div class="col-lg-7" data-aos="fade-left">
-                <div class="contact-form">
-                    <h2 class="section-title text-start mb-4">Envie uma Mensagem</h2>
-                    
-                    <?php if (!empty($successMessage)): ?>
-                        <div class="alert alert-success" role="alert">
-                            <?php echo $successMessage; ?>
+            <div class="col-lg-8" data-aos="fade-up">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4 p-lg-5">
+                        <h3 class="card-title h4 fw-bold text-primary mb-4">Envie uma Mensagem</h3>
+                        
+                        <!-- Mensagem de sucesso -->
+                        <div class="alert alert-success d-none" id="formSuccess">
+                            <i class="bi bi-check-circle-fill me-2"></i> Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.
                         </div>
-                    <?php endif; ?>
-                    
-                    <?php if (!empty($errorMessage)): ?>
-                        <div class="alert alert-danger" role="alert" id="form-error">
-                            <?php echo $errorMessage; ?>
-                        </div>
-                    <?php endif; ?>
-                    
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" id="contact-form">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="nome" class="form-label">Nome Completo*</label>
-                                <input type="text" class="form-control" id="nome" name="nome" required>
+                        
+                        <form class="contact-form" id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Nome Completo *</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, informe seu nome.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">E-mail *</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, informe um e-mail válido.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="email" class="form-label">E-mail*</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Telefone *</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, informe seu telefone.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="company" class="form-label">Empresa</label>
+                                        <input type="text" class="form-control" id="company" name="company">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="telefone" class="form-label">Telefone*</label>
-                                <input type="tel" class="form-control" id="telefone" name="telefone" required>
+                            
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Assunto *</label>
+                                <select class="form-select form-control" id="subject" name="subject" required>
+                                    <option value="" selected disabled>Selecione o assunto</option>
+                                    <option value="Treinamento NR 20">Treinamento NR 20</option>
+                                    <option value="Treinamento NR 5">Treinamento NR 5</option>
+                                    <option value="Treinamento NR 12">Treinamento NR 12</option>
+                                    <option value="Treinamento NR 31">Treinamento NR 31</option>
+                                    <option value="Treinamento NR 11">Treinamento NR 11</option>
+                                    <option value="Consultoria">Consultoria</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Por favor, selecione um assunto.
+                                </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="empresa" class="form-label">Empresa</label>
-                                <input type="text" class="form-control" id="empresa" name="empresa">
+                            
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Mensagem *</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                <div class="invalid-feedback">
+                                    Por favor, escreva sua mensagem.
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="assunto" class="form-label">Assunto*</label>
-                            <select class="form-select" id="assunto" name="assunto" required>
-                                <option value="" selected disabled>Selecione um assunto</option>
-                                <option value="Orçamento de Treinamento">Orçamento de Treinamento</option>
-                                <option value="Consultoria">Consultoria</option>
-                                <option value="Parceria">Parceria</option>
-                                <option value="Dúvidas">Dúvidas</option>
-                                <option value="Outros">Outros</option>
-                            </select>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label for="mensagem" class="form-label">Mensagem*</label>
-                            <textarea class="form-control" id="mensagem" name="mensagem" rows="5" required></textarea>
-                        </div>
-                        
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="termos" required>
-                            <label class="form-check-label" for="termos">Concordo com a <a href="#">política de privacidade</a> e com o tratamento dos meus dados.*</label>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-lg">Enviar Mensagem</button>
-                    </form>
+                            
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                                    Enviar Mensagem
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -197,84 +171,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- Mapa -->
 <section class="py-5 bg-light">
-    <div class="container py-4">
-        <h2 class="section-title text-center mb-5">Nossa Localização</h2>
-        <div class="ratio ratio-21x9 rounded shadow overflow-hidden">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14472.49691597401!2d-53.47030790000001!3d-24.94871905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d153b5d484d1%3A0x19e47bb386fbe3f0!2sCentro%2C%20Cascavel%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1711059338313!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </div>
-</section>
-
-<!-- Perguntas Frequentes -->
-<section class="py-5">
-    <div class="container py-4">
-        <h2 class="section-title text-center mb-5">Perguntas Frequentes</h2>
-        
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="accordion" id="accordionFAQ">
-                    <div class="accordion-item mb-3 border rounded-3 shadow-sm">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                Quais são as NRs que vocês oferecem treinamento?
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
-                            <div class="accordion-body">
-                                Oferecemos treinamentos para diversas normas regulamentadoras, incluindo NR 5 (CIPA), NR 11 (Operação de Equipamentos), NR 12 (Segurança em Máquinas e Equipamentos), NR 20 (Inflamáveis e Combustíveis) e NR 31 (Segurança na Agricultura).
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item mb-3 border rounded-3 shadow-sm">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Os treinamentos podem ser realizados in company?
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
-                            <div class="accordion-body">
-                                Sim, todos os nossos treinamentos podem ser realizados nas instalações de sua empresa, adaptando-se à realidade e necessidades específicas do seu ambiente de trabalho.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item mb-3 border rounded-3 shadow-sm">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Qual é a duração média dos treinamentos?
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
-                            <div class="accordion-body">
-                                A duração dos treinamentos varia de acordo com a norma regulamentadora e o nível do curso (básico, intermediário ou avançado). Em geral, os cursos têm duração de 8 a 40 horas, conforme exigência de cada NR.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item mb-3 border rounded-3 shadow-sm">
-                        <h2 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                Os certificados dos treinamentos são válidos em todo o território nacional?
-                            </button>
-                        </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFAQ">
-                            <div class="accordion-body">
-                                Sim, todos os nossos certificados são válidos em território nacional e atendem às exigências legais das normas regulamentadoras do Ministério do Trabalho.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item border rounded-3 shadow-sm">
-                        <h2 class="accordion-header" id="headingFive">
-                            <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                Qual o número mínimo e máximo de participantes por turma?
-                            </button>
-                        </h2>
-                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionFAQ">
-                            <div class="accordion-body">
-                                O número mínimo de participantes por turma é de 5 pessoas, e o máximo varia de acordo com o tipo de treinamento. Para cursos teóricos, podemos atender até 30 pessoas por turma, enquanto para cursos práticos, limitamos a 15 participantes para garantir a qualidade do treinamento.
-                            </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-0">
+                        <!-- Substitua pelo mapa real da empresa quando disponível -->
+                        <div class="ratio ratio-21x9">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.356219550619!2d-43.17916548503453!3d-22.90575998501185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f58a6a00a9d%3A0x3f251d85272f76f7!2sCentro%2C%20Rio%20de%20Janeiro%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1616614971259!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
@@ -283,7 +187,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </section>
 
-<?php
-// Inclusão do rodapé
-include_once 'includes/footer.php';
-?>
+<!-- WhatsApp Button -->
+<a href="https://wa.me/5500000000000" class="whatsapp-btn" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+<?php include 'includes/footer.php'; ?>
