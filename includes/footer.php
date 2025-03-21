@@ -61,13 +61,11 @@
             </div>
         </div>
     </div>
+<!-- Final do footer original... -->
 </footer>
+
 <!-- Botão Flutuante do WhatsApp -->
-<div class="whatsapp-float">
-    <a href="https://wa.me/5500000000000" target="_blank" class="whatsapp-button" title="Fale conosco pelo WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-</div>
+<?php include_once 'includes/whatsapp-button.php'; ?>
 
 <!-- Bootstrap JS Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

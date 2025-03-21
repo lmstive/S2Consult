@@ -298,12 +298,13 @@ footer a:hover {
   border-radius: 50%;
   margin-right: 10px;
 }
+
 /* Botão Flutuante do WhatsApp */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 .whatsapp-button {
@@ -327,10 +328,10 @@ footer a:hover {
 }
 
 .whatsapp-button i {
-  margin: 0; /* Remove a margem padrão dos ícones */
+  margin: 0;
 }
 
-/* Adicionar animação de pulso */
+/* Animação de pulso */
 @keyframes pulse {
   0% {
       transform: scale(1);
@@ -352,7 +353,7 @@ footer a:hover {
   animation: pulse 2s infinite;
 }
 
-/* Responsividade para dispositivos móveis */
+/* Responsividade */
 @media (max-width: 768px) {
   .whatsapp-button {
       width: 50px;
