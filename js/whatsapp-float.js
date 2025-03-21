@@ -1,24 +1,42 @@
-// Função para adicionar o botão do WhatsApp diretamente ao corpo da página
 document.addEventListener('DOMContentLoaded', function() {
-  // Criar o elemento div para o botão do WhatsApp
-  var whatsappFloat = document.createElement('div');
-  whatsappFloat.className = 'whatsapp-float';
+  // Configurações
+  const floatButton = document.createElement('div');
+  floatButton.className = 'whatsapp-float';
   
-  // Criar o link do WhatsApp
-  var whatsappLink = document.createElement('a');
-  whatsappLink.href = 'https://wa.me/5500000000000'; // Substitua pelo número correto
+  const whatsappLink = document.createElement('a');
+  whatsappLink.href = 'https://wa.me/5500000000000'; // ATUALIZE SEU NÚMERO
   whatsappLink.className = 'whatsapp-button';
   whatsappLink.title = 'Fale conosco pelo WhatsApp';
   whatsappLink.target = '_blank';
   
-  // Criar o ícone do WhatsApp
-  var whatsappIcon = document.createElement('i');
+  const whatsappIcon = document.createElement('i');
   whatsappIcon.className = 'fab fa-whatsapp';
   
-  // Montar a estrutura
+  // Montagem
   whatsappLink.appendChild(whatsappIcon);
-  whatsappFloat.appendChild(whatsappLink);
-  
-  // Adicionar ao corpo da página
-  document.body.appendChild(whatsappFloat);
+  floatButton.appendChild(whatsappLink);
+  document.body.appendChild(floatButton);
+
+  // Controle de Scroll
+  let lastScroll = window.pageYOffset;
+  const sensitivity = 30; // Quanto maior, menos sensível
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    const scrollDiff = currentScroll - lastScroll;
+    
+    if (Math.abs(scrollDiff) > sensitivity) {
+      if (scrollDiff > 0) { // Scroll para baixo
+        floatButton.classList.add('scrolling-down');
+      } else { // Scroll para cima
+        floatButton.classList.remove('scrolling-down');
+      }
+      lastScroll = currentScroll;
+    }
+  });
+
+  // Suavizar aparecimento inicial
+  setTimeout(() => {
+    floatButton.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+  }, 1000);
 });
