@@ -1,184 +1,322 @@
 <?php
-$pageTitle = "Instrutores | S2 Consultoria e Treinamento em Segurança do Trabalho";
-$currentPage = "instrutores";
-include 'includes/header.php';
-include 'includes/navbar.php';
+// Página de instrutores
+include_once 'includes/header.php';
+include_once 'includes/navbar.php';
 ?>
 
-<!-- Page Header -->
-<section class="bg-primary text-white py-5">
-    <div class="container">
+<main class="container my-5">
+    <!-- Banner da página -->
+    <div class="bg-light p-5 rounded mb-5 text-center">
+        <h1>Nossos Instrutores</h1>
+        <p class="lead">Conheça a equipe de especialistas que compartilham conhecimento e experiência</p>
+    </div>
+    
+    <!-- Introdução -->
+    <section class="mb-5">
         <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                <h1 class="fw-bold">Nossos Instrutores</h1>
-                <p class="lead">Profissionais altamente qualificados e experientes</p>
+            <div class="col-md-10 mx-auto">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <p class="card-text">
+                            A S2 Consultoria conta com uma equipe de instrutores altamente qualificados e experientes 
+                            na área de segurança do trabalho. Nossos profissionais possuem formação especializada, 
+                            certificações e vivência prática, garantindo treinamentos de excelência que combinam 
+                            teoria e aplicação prática.
+                        </p>
+                        <p class="card-text">
+                            Todos os nossos instrutores passam por capacitação contínua para se manterem atualizados 
+                            sobre as mudanças nas normas regulamentadoras e as melhores práticas em segurança do trabalho, 
+                            assegurando a qualidade e relevância dos treinamentos oferecidos.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Intro Section -->
-<section class="py-5">
-    <div class="container">
+    </section>
+    
+    <!-- Equipe de Instrutores -->
+    <section id="equipe-instrutores" class="mb-5">
         <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                <h2 class="text-primary fw-bold">Especialistas em Segurança do Trabalho</h2>
-                <p class="lead">Nossa equipe é composta por profissionais com ampla experiência e formação específica na área de segurança do trabalho.</p>
-                <p>Todos os nossos instrutores são certificados e atualizados com as mais recentes normas e práticas do setor, garantindo um aprendizado de qualidade e aplicável à realidade das empresas.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Instrutores -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <!-- Instrutor 1 -->
-        <div class="row mb-5" data-aos="fade-up">
-            <div class="col-lg-4 mb-4 mb-lg-0">
-                <div class="instructor-img-container rounded shadow">
-                    <img src="assets/images/instructor-1.jpg" alt="Nome do Instrutor" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4 p-lg-5">
-                        <h3 class="text-primary fw-bold">Nome do Instrutor</h3>
-                        <p class="text-muted">Especialista em NR 20 e NR 12</p>
-                        
-                        <div class="mb-4">
-                            <h5 class="mt-4">Formação:</h5>
-                            <ul>
-                                <li>Engenheiro de Segurança do Trabalho</li>
-                                <li>Pós-graduação em Higiene Ocupacional</li>
-                                <li>Especialização em Prevenção e Combate a Incêndios</li>
-                            </ul>
-                            
-                            <h5 class="mt-4">Experiência:</h5>
-                            <p>Mais de 10 anos de experiência em indústrias do setor petroquímico, atuando na implementação de programas de segurança, análise de riscos e treinamentos especializados em NR 20 e NR 12.</p>
-                            
-                            <h5 class="mt-4">Cursos Ministrados:</h5>
-                            <ul>
-                                <li>NR 20 - Segurança e Saúde no Trabalho com Inflamáveis e Combustíveis</li>
-                                <li>NR 12 - Segurança no Trabalho em Máquinas e Equipamentos</li>
-                                <li>Análise Preliminar de Riscos (APR)</li>
-                                <li>Permissão para Trabalho (PT)</li>
-                            </ul>
+            <div class="col-md-10 mx-auto">
+                <h2 class="text-center mb-4">Equipe de Instrutores</h2>
+                
+                <!-- Instrutor 1 - Substituir com informações reais -->
+                <div class="card shadow mb-4">
+                    <div class="row g-0">
+                        <div class="col-md-3 text-center py-4">
+                            <i class="fas fa-user-circle fa-7x text-primary mb-3"></i>
+                            <h3>Nome do Instrutor</h3>
+                            <p class="badge bg-primary">Engenheiro de Segurança</p>
                         </div>
-                        
-                        <div class="instructor-social">
-                            <a href="#" class="me-3 text-primary" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                            <a href="#" class="text-primary" target="_blank"><i class="bi bi-envelope-fill"></i> E-mail</a>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h4 class="card-title border-bottom pb-2">Especialidades</h4>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>NR-10 - Segurança em Instalações Elétricas</li>
+                                            <li>NR-12 - Segurança no Trabalho com Máquinas</li>
+                                            <li>NR-33 - Espaços Confinados</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>NR-35 - Trabalho em Altura</li>
+                                            <li>Análise Preliminar de Riscos (APR)</li>
+                                            <li>Investigação de Acidentes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h4 class="card-title border-bottom pb-2">Formação e Experiência</h4>
+                                <p class="card-text">
+                                    Engenheiro de Segurança do Trabalho com mais de 10 anos de experiência em 
+                                    indústrias de grande porte. Especialista em gestão de riscos e prevenção de 
+                                    acidentes, com certificações nacionais e internacionais. Já capacitou mais 
+                                    de 3.000 profissionais em diversos segmentos industriais.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Instrutor 2 - Substituir com informações reais -->
+                <div class="card shadow mb-4">
+                    <div class="row g-0">
+                        <div class="col-md-3 text-center py-4">
+                            <i class="fas fa-user-circle fa-7x text-primary mb-3"></i>
+                            <h3>Nome do Instrutor</h3>
+                            <p class="badge bg-success">Técnico em Segurança</p>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h4 class="card-title border-bottom pb-2">Especialidades</h4>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>NR-05 - CIPA</li>
+                                            <li>NR-06 - Uso de EPIs</li>
+                                            <li>NR-17 - Ergonomia</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>NR-18 - Segurança na Construção</li>
+                                            <li>Primeiros Socorros</li>
+                                            <li>Programas de Prevenção</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h4 class="card-title border-bottom pb-2">Formação e Experiência</h4>
+                                <p class="card-text">
+                                    Técnico em Segurança do Trabalho com formação complementar em Ergonomia. 
+                                    Possui 8 anos de experiência em empresas de construção civil e indústria. 
+                                    Especialista em identificação e controle de riscos, com abordagem prática 
+                                    e dinâmica em seus treinamentos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Instrutor 3 - Substituir com informações reais -->
+                <div class="card shadow mb-4">
+                    <div class="row g-0">
+                        <div class="col-md-3 text-center py-4">
+                            <i class="fas fa-user-circle fa-7x text-primary mb-3"></i>
+                            <h3>Nome do Instrutor</h3>
+                            <p class="badge bg-info">Médico do Trabalho</p>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h4 class="card-title border-bottom pb-2">Especialidades</h4>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>PCMSO</li>
+                                            <li>Toxicologia Ocupacional</li>
+                                            <li>Primeiros Socorros Avançados</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>Prevenção de Doenças Ocupacionais</li>
+                                            <li>Saúde Mental no Trabalho</li>
+                                            <li>Ergonomia Aplicada</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h4 class="card-title border-bottom pb-2">Formação e Experiência</h4>
+                                <p class="card-text">
+                                    Médico com especialização em Medicina do Trabalho e mestrado em Saúde Ocupacional. 
+                                    Atua há 12 anos no desenvolvimento e implementação de programas de controle médico 
+                                    e saúde ocupacional. Experiência em diversos setores, incluindo indústria, saúde e serviços.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Instrutor 2 -->
-        <div class="row mb-5" data-aos="fade-up">
-            <div class="col-lg-4 mb-4 mb-lg-0 order-lg-2">
-                <div class="instructor-img-container rounded shadow">
-                    <img src="assets/images/instructor-2.jpg" alt="Nome do Instrutor" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-8 order-lg-1">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4 p-lg-5">
-                        <h3 class="text-primary fw-bold">Nome do Instrutor</h3>
-                        <p class="text-muted">Especialista em NR 5 e NR 31</p>
-                        
-                        <div class="mb-4">
-                            <h5 class="mt-4">Formação:</h5>
-                            <ul>
-                                <li>Técnico de Segurança do Trabalho</li>
-                                <li>Graduação em Engenharia Agronômica</li>
-                                <li>Especialização em Gestão de Segurança no Trabalho Rural</li>
-                            </ul>
-                            
-                            <h5 class="mt-4">Experiência:</h5>
-                            <p>8 anos de experiência no setor agroindustrial, atuando na implementação de programas de prevenção de acidentes, formação de CIPA e treinamentos em segurança para trabalhadores rurais.</p>
-                            
-                            <h5 class="mt-4">Cursos Ministrados:</h5>
-                            <ul>
-                                <li>NR 5 - Comissão Interna de Prevenção de Acidentes (CIPA)</li>
-                                <li>NR 31 - Segurança no Trabalho na Agricultura</li>
-                                <li>Uso seguro de defensivos agrícolas</li>
-                                <li>Prevenção de acidentes no campo</li>
-                            </ul>
+    </section>
+    
+    <!-- Metodologia de Treinamento -->
+    <section id="metodologia" class="mb-5">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <h2 class="text-center mb-4">Nossa Metodologia de Treinamento</h2>
+                
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="text-center mb-4">
+                                    <i class="fas fa-chalkboard-teacher fa-4x text-primary mb-3"></i>
+                                    <h4>Abordagem Teórico-Prática</h4>
+                                    <p>
+                                        Combinamos conteúdo teórico com atividades práticas para 
+                                        garantir a efetiva assimilação do conhecimento. Utilizamos 
+                                        estudos de caso, simulações e exercícios práticos.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-center mb-4">
+                                    <i class="fas fa-users fa-4x text-primary mb-3"></i>
+                                    <h4>Treinamentos Personalizados</h4>
+                                    <p>
+                                        Adaptamos nossos programas de treinamento às necessidades 
+                                        específicas de cada empresa, considerando seus riscos, 
+                                        processos e cultura organizacional.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div class="instructor-social">
-                            <a href="#" class="me-3 text-primary" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                            <a href="#" class="text-primary" target="_blank"><i class="bi bi-envelope-fill"></i> E-mail</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Instrutor 3 -->
-        <div class="row" data-aos="fade-up">
-            <div class="col-lg-4 mb-4 mb-lg-0">
-                <div class="instructor-img-container rounded shadow">
-                    <img src="assets/images/instructor-3.jpg" alt="Nome do Instrutor" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body p-4 p-lg-5">
-                        <h3 class="text-primary fw-bold">Nome do Instrutor</h3>
-                        <p class="text-muted">Especialista em NR 11</p>
-                        
-                        <div class="mb-4">
-                            <h5 class="mt-4">Formação:</h5>
-                            <ul>
-                                <li>Técnico de Segurança do Trabalho</li>
-                                <li>Certificação em Operação de Equipamentos Móveis</li>
-                                <li>Especialização em Logística e Movimentação de Cargas</li>
-                            </ul>
-                            
-                            <h5 class="mt-4">Experiência:</h5>
-                            <p>12 anos de experiência em operação e treinamento para equipamentos de movimentação de cargas, atuando em empresas do setor logístico e industrial.</p>
-                            
-                            <h5 class="mt-4">Cursos Ministrados:</h5>
-                            <ul>
-                                <li>NR 11 - Operação de Empilhadeiras</li>
-                                <li>NR 11 - Operação de Pá Carregadeira</li>
-                                <li>NR 11 - Operação de Transpaleteira</li>
-                                <li>Movimentação Segura de Cargas</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="instructor-social">
-                            <a href="#" class="me-3 text-primary" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                            <a href="#" class="text-primary" target="_blank"><i class="bi bi-envelope-fill"></i> E-mail</a>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="text-center mb-4">
+                                    <i class="fas fa-tools fa-4x text-primary mb-3"></i>
+                                    <h4>Recursos Didáticos Modernos</h4>
+                                    <p>
+                                        Utilizamos tecnologias educacionais avançadas, incluindo 
+                                        recursos audiovisuais, realidade virtual e plataformas 
+                                        interativas para enriquecer a experiência de aprendizado.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-center mb-4">
+                                    <i class="fas fa-chart-line fa-4x text-primary mb-3"></i>
+                                    <h4>Avaliação e Acompanhamento</h4>
+                                    <p>
+                                        Realizamos avaliações contínuas para medir a eficácia dos 
+                                        treinamentos e o nível de aprendizado dos participantes, 
+                                        oferecendo feedback e reforço quando necessário.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Call to Action -->
-<section class="py-5 bg-primary text-white">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8 mb-4 mb-lg-0">
-                <h2 class="fw-bold">Aprenda com os melhores profissionais do mercado</h2>
-                <p class="lead mb-0">Entre em contato para contratar nossos serviços de treinamento</p>
-            </div>
-            <div class="col-lg-4 text-lg-end">
-                <a href="contato.php" class="btn btn-light btn-lg">Solicitar Treinamento</a>
+    </section>
+    
+    <!-- Depoimentos de Clientes -->
+    <section id="depoimentos" class="mb-5">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <h2 class="text-center mb-4">O que Nossos Clientes Dizem</h2>
+                
+                <div class="row">
+                    <!-- Depoimento 1 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="text-warning mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="card-text fst-italic">
+                                    "Os treinamentos ministrados pelos instrutores da S2 Consultoria 
+                                    transformaram a cultura de segurança da nossa empresa. Material 
+                                    didático excelente e professores muito capacitados."
+                                </p>
+                            </div>
+                            <div class="card-footer bg-primary text-white">
+                                <strong>João Silva</strong> - Gerente de Segurança, Empresa ABC
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 2 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="text-warning mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="card-text fst-italic">
+                                    "A metodologia prática utilizada nos treinamentos da S2 fez toda 
+                                    a diferença para nossa equipe. Conseguimos aplicar imediatamente 
+                                    o conhecimento adquirido no dia a dia da empresa."
+                                </p>
+                            </div>
+                            <div class="card-footer bg-primary text-white">
+                                <strong>Maria Oliveira</strong> - Coordenadora de RH, Empresa XYZ
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 3 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="text-warning mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p class="card-text fst-italic">
+                                    "Profissionais extremamente qualificados, com vasto conhecimento 
+                                    teórico e prático. Os treinamentos são dinâmicos e envolventes, 
+                                    mantendo o interesse dos participantes do início ao fim."
+                                </p>
+                            </div>
+                            <div class="card-footer bg-primary text-white">
+                                <strong>Carlos Fernandes</strong> - Diretor, Empresa 123
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    
+    <!-- CTA para Contato -->
+    <section class="text-center mb-5">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <div class="card bg-primary text-white shadow">
+                    <div class="card-body p-5">
+                        <h3 class="mb-3">Interessado em nossos treinamentos?</h3>
+                        <p class="lead mb-4">Entre em contato para saber mais sobre nossa agenda de treinamentos ou para solicitar um treinamento personalizado para sua empresa.</p>
+                        <a href="contato.php" class="btn btn-light btn-lg">Solicitar Treinamento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 
-<!-- WhatsApp Button -->
-<a href="https://wa.me/5500000000000" class="whatsapp-btn" target="_blank">
-    <i class="bi bi-whatsapp"></i>
-</a>
-
-<?php include 'includes/footer.php'; ?>
+<?php
+include_once 'includes/footer.php';
+?>

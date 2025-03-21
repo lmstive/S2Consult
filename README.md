@@ -1,91 +1,96 @@
-# S2 Consultoria e Treinamento em Segurança do Trabalho
+# S2 Consultoria em Segurança do Trabalho - Site Institucional
 
-Este é o repositório do site da S2 Consultoria e Treinamento em Segurança do Trabalho, especializada em serviços de assessoria e treinamentos regulamentados pelas principais Normas Regulamentadoras (NRs).
+Este é o repositório do site institucional da S2 Consultoria em Segurança do Trabalho, uma empresa especializada em consultoria, treinamentos e serviços em segurança do trabalho e saúde ocupacional.
 
 ## Estrutura do Projeto
 
 ```
 S2-CONSULTORIA-SEGURANCA-DO-TRABALHO/
 ├── assets/
-│   ├── fonts/        # Fontes personalizadas
-│   ├── images/       # Imagens do site
-│   └── videos/       # Vídeos utilizados no site
-├── css/              # Arquivos de estilo
-│   └── style.css     # Estilos personalizados
-├── forms/            # Processamento de formulários
-│   └── contato-form.php  # Processamento do formulário de contato
-├── includes/         # Componentes reutilizáveis
-│   ├── footer.php    # Rodapé do site
-│   ├── header.php    # Cabeçalho do site
-│   └── navbar.php    # Barra de navegação
-├── js/               # JavaScript
-│   └── main.js       # Scripts personalizados
-├── libs/             # Bibliotecas externas
-├── .gitignore        # Arquivos ignorados pelo Git
-├── .htaccess         # Configurações do Apache
-├── contato.php       # Página de contato
-├── index.php         # Página inicial
-├── instrutores.php   # Página de instrutores
-├── README.md         # Documentação do projeto
-├── servicos.php      # Página de serviços
-└── sobre.php         # Página "Sobre Nós"
+│   ├── fonts/          # Fontes utilizadas no site
+│   ├── images/         # Imagens e elementos gráficos
+│   └── videos/         # Vídeos institucionais (se houver)
+├── css/
+│   └── style.css       # Estilos personalizados
+├── forms/
+│   └── contato-form.php # Formulário de contato
+├── includes/
+│   ├── footer.php      # Rodapé do site
+│   ├── header.php      # Cabeçalho do site
+│   └── navbar.php      # Barra de navegação
+├── js/
+│   └── script.js       # JavaScript personalizado
+├── libs/               # Bibliotecas de terceiros (se necessário)
+├── contato.php         # Página de contato
+├── index.php           # Página inicial
+├── instrutores.php     # Página de instrutores/equipe
+├── README.md           # Este arquivo
+├── servicos.php        # Página de serviços
+└── sobre.php           # Página sobre a empresa
 ```
+
+## Requisitos
+
+- Servidor web (Apache, Nginx, etc.)
+- PHP 7.0 ou superior
+- Navegador web moderno com suporte a HTML5, CSS3 e JavaScript
+
+## Instalação
+
+1. Clone ou faça o download deste repositório para o seu servidor web
+2. Certifique-se de que o servidor web está configurado para executar PHP
+3. Configure as permissões adequadas para os diretórios e arquivos
+4. Acesse o site através do navegador web
+
+## Funcionalidades Principais
+
+- **Página Inicial**: Apresentação da empresa, serviços destacados e chamadas para ação
+- **Sobre Nós**: História da empresa, missão, visão, valores e equipe
+- **Serviços**: Detalhamento dos serviços oferecidos pela consultoria
+- **Instrutores**: Apresentação dos profissionais e suas especialidades
+- **Contato**: Formulário para contato e informações para comunicação direta
 
 ## Tecnologias Utilizadas
 
-- **PHP** - Linguagem de programação server-side
-- **HTML5** - Estrutura das páginas
-- **CSS3** - Estilização das páginas
-- **Bootstrap 5** - Framework CSS para design responsivo
-- **JavaScript** - Interatividade e animações
-- **Bootstrap Icons** - Ícones utilizados no site
-- **Animate.css** - Biblioteca para animações CSS
-- **AOS (Animate On Scroll)** - Biblioteca para animações ao rolar a página
+- HTML5
+- CSS3
+- JavaScript
+- PHP
+- Bootstrap 5
+- Font Awesome
+- Google Fonts
 
-## Funcionalidades
+## Manutenção do Site
 
-- **Design Responsivo**: Site adaptável a diferentes dispositivos
-- **Formulário de Contato**: Com validação de campos e envio de e-mail
-- **Seção de Serviços**: Detalhamento dos treinamentos e consultorias oferecidas
-- **Seção de Instrutores**: Apresentação dos profissionais da empresa
-- **Botão de WhatsApp**: Fixo e animado para facilitar o contato
-- **Animações**: Efeitos visuais para melhorar a experiência do usuário
+### Formulário de Contato
 
-## Instalação e Configuração
+O formulário de contato está localizado em `forms/contato-form.php` e é incluído na página `contato.php`. Para que o formulário funcione corretamente, você precisa:
 
-1. Clone este repositório para seu servidor web:
-```
-git clone https://github.com/seuusuario/S2-CONSULTORIA-SEGURANCA-DO-TRABALHO.git
-```
+1. Verificar se o arquivo está sendo incluído corretamente (`include_once 'forms/contato-form.php'`)
+2. Configurar o destinatário do e-mail no arquivo `forms/contato-form.php` (variável `$para`)
+3. Verificar se a função `mail()` do PHP está configurada no servidor
 
-2. Configure o servidor web (Apache, Nginx, etc.) para apontar para o diretório do projeto.
+### Páginas de Conteúdo
 
-3. Certifique-se de que o PHP está instalado e configurado no servidor.
+Para atualizar o conteúdo do site:
 
-4. Atualize as informações de contato no arquivo `forms/contato-form.php` para o e-mail correto da empresa.
+1. **Informações da Empresa**: Edite os arquivos `sobre.php`, `index.php` e `includes/footer.php`
+2. **Serviços**: Atualize o arquivo `servicos.php`
+3. **Equipe/Instrutores**: Modifique o arquivo `instrutores.php`
+4. **Informações de Contato**: Atualize os dados em `contato.php` e `includes/footer.php`
 
-5. Substitua as imagens de exemplo na pasta `assets/images/` pelas imagens reais da empresa, incluindo a logo.
+### Estilo e Aparência
 
-## Personalização
+Para modificar o estilo e aparência do site:
 
-- **Cores**: As cores principais podem ser alteradas no arquivo `css/style.css` nas variáveis CSS (`:root`).
-- **Conteúdo**: Edite os arquivos PHP para atualizar textos, imagens e informações específicas da empresa.
-- **Logo**: Substitua os arquivos `logo.png` e `logo-white.png` na pasta `assets/images/` pela logo real da empresa.
+1. **Cores e Tipografia**: Edite o arquivo `css/style.css`
+2. **Layout**: Modifique as classes Bootstrap nos arquivos PHP
+3. **Elementos Visuais**: Atualize imagens na pasta `assets/images/`
 
-## Requisitos do Servidor
+## Suporte e Contato
 
-- PHP 7.4 ou superior
-- Servidor web (Apache, Nginx, etc.)
-- Módulo PHP mail habilitado para o funcionamento do formulário de contato
+Para suporte técnico relacionado ao site, entre em contato com o desenvolvedor responsável pela manutenção.
 
-## Contato
+---
 
-Para mais informações sobre este projeto, entre em contato com:
-
-- **Email**: contato@s2consultoria.com.br
-- **Telefone**: (00) 0000-0000
-- **WhatsApp**: (00) 00000-0000
-
-## Licença
-
-Este projeto é propriedade da S2 Consultoria e Treinamento em Segurança do Trabalho. Todos os direitos reservados.
+© 2025 S2 Consultoria em Segurança do Trabalho. Todos os direitos reservados.

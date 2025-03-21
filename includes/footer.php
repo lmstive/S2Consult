@@ -1,89 +1,98 @@
 <!-- Footer -->
-<footer class="bg-dark text-white py-5">
+<footer class="bg-dark text-white pt-5 pb-3">
     <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-4 mb-4 mb-lg-0">
-                <img src="assets/images/logo-white.png" alt="S2 Consultoria" height="60" class="mb-4">
-                <p>Especialistas em consultoria, assessoria e treinamentos em segurança do trabalho, com foco nas principais Normas Regulamentadoras.</p>
-                <p class="mb-0 small">CNPJ: 24.125.788/0001-20</p>
-            </div>
-            
-            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                <h5 class="mb-4 text-primary">Links Rápidos</h5>
-                <ul class="list-unstyled footer-links">
-                    <li class="mb-2"><a href="index.php" class="text-decoration-none text-white">Início</a></li>
-                    <li class="mb-2"><a href="sobre.php" class="text-decoration-none text-white">Sobre Nós</a></li>
-                    <li class="mb-2"><a href="servicos.php" class="text-decoration-none text-white">Serviços</a></li>
-                    <li class="mb-2"><a href="instrutores.php" class="text-decoration-none text-white">Instrutores</a></li>
-                    <li><a href="contato.php" class="text-decoration-none text-white">Contato</a></li>
-                </ul>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                <h5 class="mb-4 text-primary">Treinamentos</h5>
-                <ul class="list-unstyled footer-links">
-                    <li class="mb-2"><a href="servicos.php#nr20" class="text-decoration-none text-white">NR 20 - Inflamáveis e Combustíveis</a></li>
-                    <li class="mb-2"><a href="servicos.php#nr5" class="text-decoration-none text-white">NR 5 - CIPA</a></li>
-                    <li class="mb-2"><a href="servicos.php#nr12" class="text-decoration-none text-white">NR 12 - Máquinas e Equipamentos</a></li>
-                    <li class="mb-2"><a href="servicos.php#nr31" class="text-decoration-none text-white">NR 31 - Setor Agrícola</a></li>
-                    <li><a href="servicos.php#nr11" class="text-decoration-none text-white">NR 11 - Operação de Equipamentos</a></li>
-                </ul>
-            </div>
-            
-            <div class="col-lg-3 col-md-6">
-                <h5 class="mb-4 text-primary">Contato</h5>
-                <ul class="list-unstyled footer-contact">
-                    <li class="mb-3 d-flex">
-                        <i class="bi bi-geo-alt-fill text-primary me-2"></i>
-                        <span>Endereço da empresa, Cidade - Estado, CEP</span>
-                    </li>
-                    <li class="mb-3 d-flex">
-                        <i class="bi bi-telephone-fill text-primary me-2"></i>
-                        <span>(00) 0000-0000</span>
-                    </li>
-                    <li class="mb-3 d-flex">
-                        <i class="bi bi-whatsapp text-primary me-2"></i>
-                        <span>(00) 00000-0000</span>
-                    </li>
-                    <li class="d-flex">
-                        <i class="bi bi-envelope-fill text-primary me-2"></i>
-                        <span>contato@s2consultoria.com.br</span>
-                    </li>
-                </ul>
-                
-                <h5 class="mt-4 mb-3 text-primary">Redes Sociais</h5>
-                <div class="social-links">
-                    <a href="#" class="me-2 social-icon" target="_blank"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="me-2 social-icon" target="_blank"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="social-icon" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <div class="row">
+            <!-- Coluna 1: Sobre a Empresa -->
+            <div class="col-md-4 mb-4">
+                <h5 class="mb-3">S2 Consultoria</h5>
+                <p>Especialistas em soluções de segurança do trabalho, oferecendo consultoria, treinamentos e assessoria para empresas de todos os portes.</p>
+                <div class="mt-3">
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
                 </div>
+            </div>
+            
+            <!-- Coluna 2: Links Rápidos -->
+            <div class="col-md-2 mb-4">
+                <h5 class="mb-3">Links Rápidos</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="index.php" class="text-white text-decoration-none">Início</a></li>
+                    <li class="mb-2"><a href="sobre.php" class="text-white text-decoration-none">Sobre Nós</a></li>
+                    <li class="mb-2"><a href="servicos.php" class="text-white text-decoration-none">Serviços</a></li>
+                    <li class="mb-2"><a href="instrutores.php" class="text-white text-decoration-none">Instrutores</a></li>
+                    <li class="mb-2"><a href="contato.php" class="text-white text-decoration-none">Contato</a></li>
+                </ul>
+            </div>
+            
+            <!-- Coluna 3: Serviços -->
+            <div class="col-md-3 mb-4">
+                <h5 class="mb-3">Nossos Serviços</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="servicos.php#ppra" class="text-white text-decoration-none">PPRA</a></li>
+                    <li class="mb-2"><a href="servicos.php#pcmso" class="text-white text-decoration-none">PCMSO</a></li>
+                    <li class="mb-2"><a href="servicos.php#treinamentos" class="text-white text-decoration-none">Treinamentos</a></li>
+                    <li class="mb-2"><a href="servicos.php#laudos" class="text-white text-decoration-none">Laudos Técnicos</a></li>
+                    <li class="mb-2"><a href="servicos.php#consultoria" class="text-white text-decoration-none">Consultoria</a></li>
+                </ul>
+            </div>
+            
+            <!-- Coluna 4: Contato -->
+            <div class="col-md-3 mb-4">
+                <h5 class="mb-3">Contato</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Rua Exemplo, 123 - Cidade, Estado</li>
+                    <li class="mb-2"><i class="fas fa-phone me-2"></i>(00) 0000-0000</li>
+                    <li class="mb-2"><i class="fas fa-envelope me-2"></i>contato@s2consultoria.com.br</li>
+                    <li class="mb-2"><i class="fas fa-clock me-2"></i>Seg-Sex: 8h às 18h</li>
+                </ul>
+            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <!-- Copyright -->
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="small mb-0">&copy; <?php echo date('Y'); ?> S2 Consultoria em Segurança do Trabalho. Todos os direitos reservados.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="small mb-0">Desenvolvido por <a href="#" class="text-white">Seu Nome ou Empresa</a></p>
             </div>
         </div>
     </div>
 </footer>
-
-<!-- Copyright -->
-<div class="py-3 bg-darker text-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 text-center text-md-start">
-                <p class="mb-0 small">&copy; <?php echo date('Y'); ?> S2 Consultoria e Treinamento. Todos os direitos reservados.</p>
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-                <p class="mb-0 small">Desenvolvido por <a href="#" class="text-primary text-decoration-none">Seu Nome</a></p>
-            </div>
-        </div>
-    </div>
+<!-- Botão Flutuante do WhatsApp -->
+<div class="whatsapp-float">
+    <a href="https://wa.me/5500000000000" target="_blank" class="whatsapp-button" title="Fale conosco pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </div>
 
 <!-- Bootstrap JS Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- AOS - Animate On Scroll -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- jQuery (se necessário) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- Custom JS -->
-<script src="js/main.js"></script>
+<!-- Custom JS (se existir) -->
+<script src="js/script.js"></script>
+
+<!-- Script para destacar o link atual no menu de navegação -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPath = window.location.pathname;
+        const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+        
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === filename || (filename === '' && href === 'index.php')) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

@@ -43,11 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
       contactForm.addEventListener('submit', function(e) {
           e.preventDefault();
           
-          // Substituir por sua lógica de envio de formulário
-          const formData = new FormData(this);
-          const formValues = Object.fromEntries(formData.entries());
-          
-          // Exemplo de validação básica
+          // Validação básica
           let isValid = true;
           const requiredFields = ['name', 'email', 'phone', 'message'];
           
@@ -70,28 +66,52 @@ document.addEventListener('DOMContentLoaded', function() {
           }
           
           if (isValid) {
-              // Aqui você pode enviar o formulário via AJAX para o servidor
-              // Por enquanto, apenas mostraremos uma mensagem de sucesso
+              // Preparar dados para envio
+              const formData = new FormData(this);
               const submitBtn = document.getElementById('submitBtn');
               const originalText = submitBtn.innerHTML;
               
               submitBtn.disabled = true;
               submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Enviando...';
               
-              // Simulando um delay para o envio
-              setTimeout(function() {
-                  const successMessage = document.getElementById('formSuccess');
-                  contactForm.reset();
+              // Enviar via AJAX
+              fetch('contato-form.php', {
+                  method: 'POST',
+                  body: formData
+              })
+              .then(response => response.json())
+              .then(data => {
                   submitBtn.disabled = false;
                   submitBtn.innerHTML = originalText;
                   
-                  if (successMessage) {
-                      successMessage.classList.remove('d-none');
-                      setTimeout(() => {
-                          successMessage.classList.add('d-none');
-                      }, 5000);
+                  if (data.status === 'success') {
+                      const successMessage = document.getElementById('formSuccess');
+                      contactForm.reset();
+                      
+                      if (successMessage) {
+                          successMessage.classList.remove('d-none');
+                          setTimeout(() => {
+                              successMessage.classList.add('d-none');
+                          }, 5000);
+                      }
+                  } else {
+                      // Mostrar mensagem de erro
+                      alert('Erro ao enviar mensagem: ' + data.message);
+                      
+                      // Se houver erros específicos
+                      if (data.errors) {
+                          data.errors.forEach(error => {
+                              alert(error);
+                          });
+                      }
                   }
-              }, 2000);
+              })
+              .catch(error => {
+                  submitBtn.disabled = false;
+                  submitBtn.innerHTML = originalText;
+                  alert('Erro ao enviar mensagem. Por favor, tente novamente mais tarde.');
+                  console.error('Erro:', error);
+              });
           }
       });
   }

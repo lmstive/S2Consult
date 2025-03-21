@@ -1,35 +1,45 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
+        <!-- Logo -->
         <a class="navbar-brand" href="index.php">
-            <img src="assets/images/logo.png" alt="S2 Consultoria" height="60" class="d-inline-block align-top">
+            <!-- Substituir pelo logo real ou usar texto -->
+            <span class="h4 text-primary fw-bold">S2 Consultoria</span>
         </a>
         
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Botão Toggler para Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+        <!-- Links de Navegação -->
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link <?php echo ($currentPage == 'home') ? 'active' : ''; ?>" href="index.php">Início</a>
+                    <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php') ? 'active' : ''; ?>" href="index.php">Início</a>
                 </li>
+                
                 <li class="nav-item">
-                    <a class="nav-link <?php echo ($currentPage == 'sobre') ? 'active' : ''; ?>" href="sobre.php">Sobre Nós</a>
+                    <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'sobre.php') ? 'active' : ''; ?>" href="sobre.php">Sobre Nós</a>
                 </li>
+                
                 <li class="nav-item">
-                    <a class="nav-link <?php echo ($currentPage == 'servicos') ? 'active' : ''; ?>" href="servicos.php">Serviços</a>
+                    <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'servicos.php') ? 'active' : ''; ?>" href="servicos.php">Serviços</a>
                 </li>
+                
                 <li class="nav-item">
-                    <a class="nav-link <?php echo ($currentPage == 'instrutores') ? 'active' : ''; ?>" href="instrutores.php">Instrutores</a>
+                    <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'instrutores.php') ? 'active' : ''; ?>" href="instrutores.php">Instrutores</a>
                 </li>
+                
                 <li class="nav-item">
-                    <a class="nav-link <?php echo ($currentPage == 'contato') ? 'active' : ''; ?>" href="contato.php">Contato</a>
+                    <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'contato.php') ? 'active' : ''; ?>" href="contato.php">Contato</a>
+                </li>
+                
+                <!-- Botão de Destaque para Orçamento -->
+                <li class="nav-item ms-lg-3">
+                    <a class="btn btn-primary" href="contato.php">Solicitar Orçamento</a>
                 </li>
             </ul>
-            <div class="d-flex align-items-center ms-lg-4">
-                <a href="contato.php" class="btn btn-primary rounded-pill px-4">Solicitar Orçamento</a>
-            </div>
         </div>
     </div>
 </nav>

@@ -1,176 +1,118 @@
 <?php
-$pageTitle = "S2 Consultoria e Treinamento em Segurança do Trabalho";
-$currentPage = "home";
-include 'includes/header.php';
-include 'includes/navbar.php';
+// Página principal do site
+include_once 'includes/header.php';
+include_once 'includes/navbar.php';
 ?>
 
-<!-- Hero Section -->
-<div class="hero-section">
-    <div class="container">
-        <div class="row align-items-center min-vh-75">
-            <div class="col-lg-6 py-5">
-                <h1 class="display-4 fw-bold text-primary animate__animated animate__fadeInUp">Segurança do Trabalho é com a S2 Consultoria</h1>
-                <p class="lead mt-3 animate__animated animate__fadeInUp animate__delay-1s">
-                    Especialistas em consultoria, assessoria e treinamentos regulamentados pelas Normas Regulamentadoras.
-                </p>
-                <div class="mt-4 animate__animated animate__fadeInUp animate__delay-2s">
-                    <a href="servicos.php" class="btn btn-primary btn-lg me-2">Nossos Serviços</a>
-                    <a href="contato.php" class="btn btn-outline-secondary btn-lg">Fale Conosco</a>
+<main>
+    <!-- Banner Principal / Hero Section -->
+    <section id="hero" class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4">S2 Consultoria em Segurança do Trabalho</h1>
+                    <p class="lead mb-4">Protegendo o que é mais importante: a saúde e segurança dos seus colaboradores</p>
+                    <a href="contato.php" class="btn btn-light btn-lg">Solicite uma Avaliação</a>
                 </div>
             </div>
-            <div class="col-lg-6 d-none d-lg-block animate__animated animate__fadeIn animate__delay-1s">
-                <img src="assets/images/hero-image.jpg" alt="Segurança do Trabalho" class="img-fluid rounded shadow">
-            </div>
         </div>
-    </div>
-</div>
+    </section>
 
-<!-- Serviços Destaque -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold text-primary">Nossos Serviços</h2>
-            <p class="lead">Oferecemos treinamentos e assessoria especializada nas principais NRs</p>
-        </div>
-        
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 service-card shadow-sm border-0">
-                    <div class="card-body text-center p-4">
-                        <div class="icon-box mb-4">
-                            <i class="bi bi-fire text-primary fs-1"></i>
+    <!-- Seção de Serviços Destaques -->
+    <section id="servicos-destaque" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Nossos Serviços</h2>
+            
+            <div class="row">
+                <!-- Serviço 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-file-alt fa-3x mb-3 text-primary"></i>
+                            <h3 class="card-title">PPRA</h3>
+                            <p class="card-text">Programa de Prevenção de Riscos Ambientais para identificar e controlar riscos no ambiente de trabalho.</p>
+                            <a href="servicos.php#ppra" class="btn btn-outline-primary">Saiba mais</a>
                         </div>
-                        <h3 class="card-title h5 fw-bold">NR 20</h3>
-                        <p class="card-text">Segurança e Saúde no Trabalho com Inflamáveis e Combustíveis</p>
-                        <a href="servicos.php#nr20" class="btn btn-sm btn-outline-primary mt-3">Saiba mais</a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card h-100 service-card shadow-sm border-0">
-                    <div class="card-body text-center p-4">
-                        <div class="icon-box mb-4">
-                            <i class="bi bi-people text-primary fs-1"></i>
+                
+                <!-- Serviço 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-heartbeat fa-3x mb-3 text-primary"></i>
+                            <h3 class="card-title">PCMSO</h3>
+                            <p class="card-text">Programa de Controle Médico de Saúde Ocupacional para promover a saúde de seus colaboradores.</p>
+                            <a href="servicos.php#pcmso" class="btn btn-outline-primary">Saiba mais</a>
                         </div>
-                        <h3 class="card-title h5 fw-bold">NR 5</h3>
-                        <p class="card-text">Comissão Interna de Prevenção de Acidentes (CIPA)</p>
-                        <a href="servicos.php#nr5" class="btn btn-sm btn-outline-primary mt-3">Saiba mais</a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card h-100 service-card shadow-sm border-0">
-                    <div class="card-body text-center p-4">
-                        <div class="icon-box mb-4">
-                            <i class="bi bi-gear text-primary fs-1"></i>
+                
+                <!-- Serviço 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-hard-hat fa-3x mb-3 text-primary"></i>
+                            <h3 class="card-title">Treinamentos</h3>
+                            <p class="card-text">Treinamentos especializados em segurança do trabalho para capacitar sua equipe.</p>
+                            <a href="servicos.php#treinamentos" class="btn btn-outline-primary">Saiba mais</a>
                         </div>
-                        <h3 class="card-title h5 fw-bold">NR 12</h3>
-                        <p class="card-text">Segurança no Trabalho em Máquinas e Equipamentos</p>
-                        <a href="servicos.php#nr12" class="btn btn-sm btn-outline-primary mt-3">Saiba mais</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center mt-5">
-            <a href="servicos.php" class="btn btn-primary">Ver todos os serviços</a>
-        </div>
-    </div>
-</section>
-
-<!-- Sobre Nós Resumo -->
-<section class="py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="assets/images/about-us.jpg" alt="Sobre a S2 Consultoria" class="img-fluid rounded shadow">
-            </div>
-            <div class="col-lg-6">
-                <h2 class="fw-bold text-primary">Sobre a S2 Consultoria</h2>
-                <p class="lead">Somos especialistas em segurança do trabalho, dedicados a criar ambientes mais seguros.</p>
-                <p>Na S2 Consultoria e Treinamento, nossa missão é proporcionar às empresas as ferramentas e conhecimentos necessários para garantir a segurança e saúde de seus colaboradores, em conformidade com as normas regulamentadoras.</p>
-                <a href="sobre.php" class="btn btn-outline-primary mt-3">Conheça nossa história</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Instrutores Destaque -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold text-primary">Nossos Instrutores</h2>
-            <p class="lead">Profissionais qualificados e experientes</p>
-        </div>
-        
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 instructor-card shadow-sm border-0">
-                    <div class="instructor-img-container">
-                        <img src="assets/images/instructor-1.jpg" class="card-img-top" alt="Instrutor">
-                    </div>
-                    <div class="card-body text-center p-4">
-                        <h3 class="card-title h5 fw-bold">Nome do Instrutor</h3>
-                        <p class="text-muted">Especialista em NR 20 e NR 12</p>
-                        <p class="card-text">Engenheiro de Segurança do Trabalho com mais de 10 anos de experiência.</p>
                     </div>
                 </div>
             </div>
             
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 instructor-card shadow-sm border-0">
-                    <div class="instructor-img-container">
-                        <img src="assets/images/instructor-2.jpg" class="card-img-top" alt="Instrutor">
-                    </div>
-                    <div class="card-body text-center p-4">
-                        <h3 class="card-title h5 fw-bold">Nome do Instrutor</h3>
-                        <p class="text-muted">Especialista em NR 5 e NR 31</p>
-                        <p class="card-text">Técnico de Segurança do Trabalho com experiência no setor agroindustrial.</p>
-                    </div>
-                </div>
+            <div class="text-center mt-4">
+                <a href="servicos.php" class="btn btn-primary">Ver Todos os Serviços</a>
             </div>
+        </div>
+    </section>
+
+    <!-- Seção Por que Escolher a S2 -->
+    <section id="diferenciais" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Por que Escolher a S2 Consultoria?</h2>
             
-            <div class="col-md-6 col-lg-4 mx-auto">
-                <div class="card h-100 instructor-card shadow-sm border-0">
-                    <div class="instructor-img-container">
-                        <img src="assets/images/instructor-3.jpg" class="card-img-top" alt="Instrutor">
+            <div class="row">
+                <!-- Diferencial 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-certificate fa-3x mb-3 text-primary"></i>
+                        <h4>Equipe Especializada</h4>
+                        <p>Profissionais altamente qualificados e experientes na área de segurança do trabalho.</p>
                     </div>
-                    <div class="card-body text-center p-4">
-                        <h3 class="card-title h5 fw-bold">Nome do Instrutor</h3>
-                        <p class="text-muted">Especialista em NR 11</p>
-                        <p class="card-text">Instrutor certificado com ampla experiência em operação de equipamentos.</p>
+                </div>
+                
+                <!-- Diferencial 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-tachometer-alt fa-3x mb-3 text-primary"></i>
+                        <h4>Soluções Personalizadas</h4>
+                        <p>Adaptamos nossos serviços às necessidades específicas da sua empresa.</p>
+                    </div>
+                </div>
+                
+                <!-- Diferencial 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-headset fa-3x mb-3 text-primary"></i>
+                        <h4>Suporte Contínuo</h4>
+                        <p>Acompanhamento e assessoria permanente para garantir a implementação efetiva das soluções.</p>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="text-center mt-5">
-            <a href="instrutores.php" class="btn btn-primary">Conhecer todos os instrutores</a>
+    </section>
+
+    <!-- Seção de Chamada para Ação -->
+    <section id="cta" class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h2 class="mb-3">Pronto para tornar sua empresa mais segura?</h2>
+            <p class="lead mb-4">Entre em contato conosco e descubra como podemos ajudar sua empresa a cumprir as normas de segurança e promover bem-estar.</p>
+            <a href="contato.php" class="btn btn-light btn-lg">Fale Conosco</a>
         </div>
-    </div>
-</section>
+    </section>
+</main>
 
-<!-- Call to Action -->
-<section class="py-5 bg-primary text-white">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8 mb-4 mb-lg-0">
-                <h2 class="fw-bold">Pronto para tornar seu ambiente de trabalho mais seguro?</h2>
-                <p class="lead mb-0">Entre em contato conosco para uma consultoria personalizada.</p>
-            </div>
-            <div class="col-lg-4 text-lg-end">
-                <a href="contato.php" class="btn btn-light btn-lg">Fale Conosco</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- WhatsApp Button -->
-<a href="https://wa.me/5500000000000" class="whatsapp-btn" target="_blank">
-    <i class="bi bi-whatsapp"></i>
-</a>
-
-<?php include 'includes/footer.php'; ?>
+<?php
+include_once 'includes/footer.php';
+?>
