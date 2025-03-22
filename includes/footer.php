@@ -1,71 +1,62 @@
 <!-- Footer -->
-<footer class="bg-dark text-white pt-5 pb-3">
+<footer class="bg-dark text-white pt-5 pb-4">
     <div class="container">
         <div class="row">
-            <!-- Coluna 1: Sobre a Empresa -->
-            <div class="col-md-4 mb-4">
-                <h5 class="mb-3">S2 Consultoria</h5>
-                <p>Especialistas em soluções de segurança do trabalho, oferecendo consultoria, treinamentos e assessoria para empresas de todos os portes.</p>
-                <div class="mt-3">
-                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+            <!-- Logo e Informações -->
+            <div class="col-md-4 mb-4 mb-md-0">
+                <a href="index.php">
+                    <img src="assets/images/logo.png" alt="S2 Consultoria" height="50" class="mb-3">
+                </a>
+                <p class="mt-3">Consultoria especializada em soluções de gestão empresarial e treinamentos corporativos.</p>
+                <div class="social-icons mt-4">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
             
-            <!-- Coluna 2: Links Rápidos -->
-            <div class="col-md-2 mb-4">
-                <h5 class="mb-3">Links Rápidos</h5>
+            <!-- Links Rápidos -->
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Links Rápidos</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="index.php" class="text-white text-decoration-none">Início</a></li>
-                    <li class="mb-2"><a href="sobre.php" class="text-white text-decoration-none">Sobre Nós</a></li>
-                    <li class="mb-2"><a href="servicos.php" class="text-white text-decoration-none">Serviços</a></li>
-                    <li class="mb-2"><a href="instrutores.php" class="text-white text-decoration-none">Instrutores</a></li>
-                    <li class="mb-2"><a href="contato.php" class="text-white text-decoration-none">Contato</a></li>
+                    <li><a href="index.php"><i class="bi bi-house-door me-2"></i>Início</a></li>
+                    <li><a href="sobre.php"><i class="bi bi-info-circle me-2"></i>Sobre Nós</a></li>
+                    <li><a href="servicos.php"><i class="bi bi-gear me-2"></i>Serviços</a></li>
+                    <li><a href="instrutores.php"><i class="bi bi-people me-2"></i>Instrutores</a></li>
+                    <li><a href="contato.php"><i class="bi bi-envelope me-2"></i>Contato</a></li>
                 </ul>
             </div>
             
-            <!-- Coluna 3: Serviços -->
-            <div class="col-md-3 mb-4">
-                <h5 class="mb-3">Nossos Serviços</h5>
+            <!-- Contato -->
+            <div class="col-md-4">
+                <h5>Contato</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="servicos.php#ppra" class="text-white text-decoration-none">PPRA</a></li>
-                    <li class="mb-2"><a href="servicos.php#pcmso" class="text-white text-decoration-none">PCMSO</a></li>
-                    <li class="mb-2"><a href="servicos.php#treinamentos" class="text-white text-decoration-none">Treinamentos</a></li>
-                    <li class="mb-2"><a href="servicos.php#laudos" class="text-white text-decoration-none">Laudos Técnicos</a></li>
-                    <li class="mb-2"><a href="servicos.php#consultoria" class="text-white text-decoration-none">Consultoria</a></li>
+                    <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> Endereço da empresa</li>
+                    <li class="mb-2"><i class="bi bi-telephone me-2"></i> (45) 9923-0947</li>
+                    <li class="mb-2"><i class="bi bi-envelope me-2"></i> contato@s2consultoria.com</li>
                 </ul>
-            </div>
-            
-            <!-- Coluna 4: Contato -->
-            <div class="col-md-3 mb-4">
-                <h5 class="mb-3">Contato</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Rua Exemplo, 123 - Cidade, Estado</li>
-                    <li class="mb-2"><i class="fas fa-phone me-2"></i>(00) 0000-0000</li>
-                    <li class="mb-2"><i class="fas fa-envelope me-2"></i>contato@s2consultoria.com.br</li>
-                    <li class="mb-2"><i class="fas fa-clock me-2"></i>Seg-Sex: 8h às 18h</li>
-                </ul>
+                
+                
             </div>
         </div>
         
-        <hr class="my-4">
-        
         <!-- Copyright -->
-        <div class="row">
-            <div class="col-md-6 text-center text-md-start">
-                <p class="small mb-0">&copy; <?php echo date('Y'); ?> S2 Consultoria em Segurança do Trabalho. Todos os direitos reservados.</p>
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-                <p class="small mb-0">Desenvolvido por <a href="#" class="text-white">Seu Nome ou Empresa</a></p>
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <hr>
+                <p class="mb-0">&copy; <?php echo date('Y'); ?> S2 Consultoria. Todos os direitos reservados.</p>
             </div>
         </div>
     </div>
-<!-- Final do footer original... -->
 </footer>
 
-<!-- Botão Flutuante do WhatsApp -->
-<?php include_once 'includes/whatsapp-button.php'; ?>
+<!-- Botão WhatsApp Flutuante -->
+<a href="https://wa.me/550000000000?text=Olá,%20gostaria%20de%20obter%20mais%20informações" 
+   class="whatsapp-float whatsapp-pulse" 
+   target="_blank" 
+   aria-label="Fale conosco pelo WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+</a>
 
 <!-- Bootstrap JS Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -76,9 +67,10 @@
 <!-- Custom JS (se existir) -->
 <script src="js/script.js"></script>
 
-<!-- Script para destacar o link atual no menu de navegação -->
+<!-- Script para destacar o link atual e animações -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Destacar link ativo
         const currentPath = window.location.pathname;
         const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
         
@@ -89,6 +81,31 @@
                 link.classList.add('active');
             }
         });
+        
+        // Animações de scroll
+        const animatedElements = document.querySelectorAll('.fade-up');
+        
+        function checkIfInView() {
+            const windowHeight = window.innerHeight;
+            const windowTopPosition = window.scrollY;
+            const windowBottomPosition = windowTopPosition + windowHeight;
+
+            animatedElements.forEach(function(element) {
+                const elementHeight = element.offsetHeight;
+                const elementTopPosition = element.offsetTop;
+                const elementBottomPosition = elementTopPosition + elementHeight;
+
+                if (
+                    (elementBottomPosition >= windowTopPosition) &&
+                    (elementTopPosition <= windowBottomPosition)
+                ) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkIfInView);
+        checkIfInView();
     });
 </script>
 

@@ -45,7 +45,7 @@ include_once 'includes/navbar.php';
                     <div class="row g-0">
                         <div class="col-md-3 text-center py-4">
                             <i class="fas fa-user-circle fa-7x text-primary mb-3"></i>
-                            <h3>Nome do Instrutor</h3>
+                            <h3>Bruna Semiguen da Cunha</h3>
                             <p class="badge bg-primary">Engenheiro de Segurança</p>
                         </div>
                         <div class="col-md-9">
